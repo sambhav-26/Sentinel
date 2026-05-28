@@ -829,26 +829,13 @@ Load Balancer
 
 ---
 
-## 👥 Contributors
+## 👥 Meet the Team
 
-- **[Your Name]** - Full stack development, agent orchestration
-- **[Team Members]** - Frontend, backend, AI integration
+Built collaboratively by:
 
----
-
-## 📄 License
-
-MIT License - See LICENSE file for details
-
----
-
-## 🤝 Support
-
-For issues, questions, or contributions:
-- Open an issue on GitHub
-- Check documentation in `/docs`
-- See JUDGE_VALIDATION_GUIDE.md for testing
-
+* Sambhav Jain
+* Yug Agrawal
+* Divi Chokra
 ---
 
 **Made with ❤️ for the Hackathon Community**
