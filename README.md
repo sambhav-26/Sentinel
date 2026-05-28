@@ -684,26 +684,7 @@ sentinel/
 
 ```
 
----
 
-## 🎨 Screenshots & Demo
-
-### Dashboard
-> Screenshot showing scan overview, real-time progress, and risk metrics
-
-### Scan Results
-> Screenshot showing vulnerability list with severity indicators
-
-### Attack Scenarios
-> Screenshot showing MITRE ATT&CK mapping and attack details
-
-### Patch Recommendations
-> Screenshot showing code fixes with complexity ratings
-
-### Report Generation
-> Screenshot showing executive summary and remediation timeline
-
----
 
 ## 🔒 Security Notes
 
@@ -779,17 +760,6 @@ sentinel/
 5. **DevX**: Good error messages and logging saves debugging time
 
 ---
-
-## 📈 Scalability
-
-### Horizontal Scaling
-```
-Load Balancer
-    ├── Backend Instance 1
-    ├── Backend Instance 2
-    ├── Backend Instance 3
-    └── Shared PostgreSQL + Redis
-```
 
 ### Performance Optimizations
 - Async/await throughout (no blocking I/O)
