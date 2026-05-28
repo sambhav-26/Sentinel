@@ -1,0 +1,76 @@
+{
+  "repository": "test_repo",
+  "total_findings": 7,
+  "findings": [
+    {
+      "file": "app.py",
+      "line": 5,
+      "severity": "Critical",
+      "cwe": "CWE-94",
+      "exploitability": 9.8,
+      "vulnerability": "Dangerous eval() usage",
+      "code_snippet": "eval(user_input)",
+      "id": "VULN-001"
+    },
+    {
+      "file": "app.py",
+      "line": 10,
+      "severity": "Critical",
+      "cwe": "CWE-78",
+      "exploitability": 9.8,
+      "vulnerability": "Dangerous os.system() usage",
+      "code_snippet": "os.system(user_input)",
+      "id": "VULN-002"
+    },
+    {
+      "file": "auth.py",
+      "line": 2,
+      "severity": "High",
+      "cwe": "CWE-798",
+      "exploitability": 8.2,
+      "vulnerability": "Hardcoded Password",
+      "code_snippet": "password = \"admin123\"",
+      "id": "VULN-003"
+    },
+    {
+      "file": "dangerous_exec.py",
+      "line": 2,
+      "severity": "Critical",
+      "cwe": "CWE-94",
+      "exploitability": 9.8,
+      "vulnerability": "Dangerous eval() usage",
+      "code_snippet": "eval(user_input)",
+      "id": "VULN-004"
+    },
+    {
+      "file": "db.py",
+      "line": 2,
+      "severity": "Critical",
+      "cwe": "CWE-89",
+      "exploitability": 9.8,
+      "vulnerability": "SQL Injection Risk",
+      "code_snippet": "query = \"SELECT * FROM users WHERE id = \" + user_input",
+      "id": "VULN-005"
+    },
+    {
+      "file": "SQL_Injection.py",
+      "line": 4,
+      "severity": "Critical",
+      "cwe": "CWE-89",
+      "exploitability": 9.8,
+      "vulnerability": "SQL Injection Risk",
+      "code_snippet": "query = \"SELECT * FROM users WHERE username = '\" + user_input + \"'\"",
+      "id": "VULN-006"
+    },
+    {
+      "file": "subprocess_issue.py",
+      "line": 4,
+      "severity": "Critical",
+      "cwe": "CWE-78",
+      "exploitability": 9.8,
+      "vulnerability": "Unsafe subprocess usage",
+      "code_snippet": "subprocess.run(cmd, shell=True)",
+      "id": "VULN-007"
+    }
+  ]
+}

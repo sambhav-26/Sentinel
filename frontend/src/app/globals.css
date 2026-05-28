@@ -1,0 +1,79 @@
+@import "tailwindcss";
+
+:root {
+  --background: #0d1117;
+  --surface: #161b22;
+  --border: #30363d;
+  --primary: #00d4aa;
+  --critical: #f85149;
+  --warning: #f5a623;
+  --text-primary: #ffffff;
+  --text-secondary: #8b949e;
+  --radius: 4px;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--text-primary);
+  --color-surface: var(--surface);
+  --color-border: var(--border);
+  --color-primary: var(--primary);
+  --color-critical: var(--critical);
+  --color-warning: var(--warning);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-jetbrains-mono);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background: var(--background);
+  color: var(--text-primary);
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
+  letter-spacing: -0.01em;
+}
+
+::selection {
+  background: rgba(0, 212, 170, 0.25);
+}
+
+@layer components {
+  .hud-panel {
+    @apply bg-[var(--surface)] border border-[var(--border)] rounded-[var(--radius)];
+  }
+
+  .hud-panel-header {
+    @apply flex items-center justify-between border-b border-[var(--border)] px-4 py-3;
+  }
+
+  .hud-label {
+    @apply text-[10px] uppercase tracking-[0.28em] text-[var(--text-secondary)] font-mono;
+  }
+
+  .hud-kpi {
+    @apply text-2xl font-semibold text-[var(--text-primary)];
+  }
+
+  .hud-divider {
+    @apply border-t border-[var(--border)];
+  }
+
+  .hud-input {
+    @apply w-full bg-transparent border border-[var(--border)] rounded-[var(--radius)] px-3 py-2 text-sm text-[var(--text-primary)] placeholder:text-[var(--text-secondary)] font-mono;
+  }
+
+  .hud-button {
+    @apply inline-flex items-center justify-center border border-[var(--border)] rounded-[var(--radius)] px-3 py-2 text-xs uppercase tracking-[0.2em] font-mono text-[var(--text-primary)] transition-colors;
+  }
+
+  .hud-button-primary {
+    @apply border-[var(--primary)] text-[var(--primary)];
+  }
+}

@@ -1,0 +1,152 @@
+{
+  "repository": "test_repo",
+  "attack_analysis": [
+    {
+      "id": "VULN-001",
+      "file": "app.py",
+      "line": 5,
+      "vulnerability": "Dangerous eval() usage",
+      "human_readable_explanation": "Untrusted input is passed directly into eval(), which executes it as code.\nAn attacker can inject their own Python instructions to run on the server.\nThis can lead to system takeover, data theft, or unauthorized access.\nAvoid eval() with user input and use safe parsing instead.",
+      "attack_type": "Remote Code Execution",
+      "severity": "Critical",
+      "cwe": "CWE-94",
+      "exploitability": 9.8,
+      "success_probability": "High",
+      "mitre_technique": "T1059",
+      "impact": "Attacker may execute arbitrary system commands.",
+      "attack_path": [
+        "Inject malicious payload",
+        "Execute arbitrary Python code",
+        "Gain server access",
+        "Exfiltrate sensitive data"
+      ],
+      "code_snippet": "eval(user_input)"
+    },
+    {
+      "id": "VULN-002",
+      "file": "app.py",
+      "line": 10,
+      "vulnerability": "Dangerous os.system() usage",
+      "human_readable_explanation": "User input is executed directly as a system command.\nAttackers can append their own shell commands to run on the host.\nThis may lead to server compromise or data theft.\nAvoid shell execution or strictly validate and escape inputs.",
+      "attack_type": "Command Injection",
+      "severity": "Critical",
+      "cwe": "CWE-78",
+      "exploitability": 9.8,
+      "success_probability": "High",
+      "mitre_technique": "T1059",
+      "impact": "Attacker may execute system commands on the host.",
+      "attack_path": [
+        "Inject command payload",
+        "Execute system command",
+        "Gain host access",
+        "Persist or exfiltrate data"
+      ],
+      "code_snippet": "os.system(user_input)"
+    },
+    {
+      "id": "VULN-003",
+      "file": "auth.py",
+      "line": 2,
+      "vulnerability": "Hardcoded Password",
+      "human_readable_explanation": "A real password is stored directly in the source code.\nIf the repository is leaked or shared, attackers can read it easily.\nThose credentials can then be used to access protected systems.\nStore secrets in environment variables or a secret manager instead.",
+      "attack_type": "Credential Abuse",
+      "severity": "High",
+      "cwe": "CWE-798",
+      "exploitability": 8.2,
+      "success_probability": "High",
+      "mitre_technique": "T1110",
+      "impact": "Attacker may gain unauthorized access using exposed credentials.",
+      "attack_path": [
+        "Obtain hardcoded password",
+        "Attempt login with exposed credential",
+        "Access protected resources",
+        "Expand access privileges"
+      ],
+      "code_snippet": "password = \"admin123\""
+    },
+    {
+      "id": "VULN-004",
+      "file": "dangerous_exec.py",
+      "line": 2,
+      "vulnerability": "Dangerous eval() usage",
+      "human_readable_explanation": "Untrusted input is passed directly into eval(), which executes it as code.\nAn attacker can inject their own Python instructions to run on the server.\nThis can lead to system takeover, data theft, or unauthorized access.\nAvoid eval() with user input and use safe parsing instead.",
+      "attack_type": "Remote Code Execution",
+      "severity": "Critical",
+      "cwe": "CWE-94",
+      "exploitability": 9.8,
+      "success_probability": "High",
+      "mitre_technique": "T1059",
+      "impact": "Attacker may execute arbitrary system commands.",
+      "attack_path": [
+        "Inject malicious payload",
+        "Execute arbitrary Python code",
+        "Gain server access",
+        "Exfiltrate sensitive data"
+      ],
+      "code_snippet": "eval(user_input)"
+    },
+    {
+      "id": "VULN-005",
+      "file": "db.py",
+      "line": 2,
+      "vulnerability": "SQL Injection Risk",
+      "human_readable_explanation": "User input is directly concatenated into an SQL query.\nAttackers can inject their own SQL to change the query logic.\nThis can expose private data or allow data modification.\nUse parameterized queries or ORM bindings to prevent injection.",
+      "attack_type": "Database Exploitation",
+      "severity": "Critical",
+      "cwe": "CWE-89",
+      "exploitability": 9.8,
+      "success_probability": "High",
+      "mitre_technique": "T1190",
+      "impact": "Attacker may read or modify sensitive database records.",
+      "attack_path": [
+        "Inject crafted SQL payload",
+        "Bypass input validation",
+        "Read or modify database rows",
+        "Exfiltrate sensitive data"
+      ],
+      "code_snippet": "query = \"SELECT * FROM users WHERE id = \" + user_input"
+    },
+    {
+      "id": "VULN-006",
+      "file": "SQL_Injection.py",
+      "line": 4,
+      "vulnerability": "SQL Injection Risk",
+      "human_readable_explanation": "User input is directly concatenated into an SQL query.\nAttackers can inject their own SQL to change the query logic.\nThis can expose private data or allow data modification.\nUse parameterized queries or ORM bindings to prevent injection.",
+      "attack_type": "Database Exploitation",
+      "severity": "Critical",
+      "cwe": "CWE-89",
+      "exploitability": 9.8,
+      "success_probability": "High",
+      "mitre_technique": "T1190",
+      "impact": "Attacker may read or modify sensitive database records.",
+      "attack_path": [
+        "Inject crafted SQL payload",
+        "Bypass input validation",
+        "Read or modify database rows",
+        "Exfiltrate sensitive data"
+      ],
+      "code_snippet": "query = \"SELECT * FROM users WHERE username = '\" + user_input + \"'\""
+    },
+    {
+      "id": "VULN-007",
+      "file": "subprocess_issue.py",
+      "line": 4,
+      "vulnerability": "Unsafe subprocess usage",
+      "human_readable_explanation": "The code runs subprocesses with shell=True while using external input.\nThis allows attackers to inject extra shell commands.\nThose commands run with the application's permissions.\nDisable shell execution and pass arguments safely as a list.",
+      "attack_type": "Command Injection",
+      "severity": "Critical",
+      "cwe": "CWE-78",
+      "exploitability": 9.8,
+      "success_probability": "High",
+      "mitre_technique": "T1059",
+      "impact": "Attacker may execute arbitrary commands via shell invocation.",
+      "attack_path": [
+        "Supply malicious argument",
+        "Trigger subprocess with shell",
+        "Execute system command",
+        "Escalate or move laterally"
+      ],
+      "code_snippet": "subprocess.run(cmd, shell=True)"
+    }
+  ]
+}
