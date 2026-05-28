@@ -835,7 +835,7 @@ Built collaboratively by:
 
 * Sambhav Jain
 * Yug Agrawal
-* Divi Chokra
+* Divi Chopra
 ---
 
 **Made with ❤️ for the Hackathon Community**
