@@ -76,7 +76,7 @@ Sentinel is an autonomous cybersecurity platform that combines code scanning, at
 │  └────────────────────┬─────────────────────────────────────┘ │
 │                      │                                         │
 │  ┌──────────────────▼──────────────────────────────────────┐  │
-│  │         ScanOrchestrator Service                         │  │
+│  │        Orchestrator Service                         │  │
 │  │    (Manages multi-agent workflow execution)              │  │
 │  └──────┬─────┬─────┬─────┬─────────────────────────────────┘  │
 │         │     │     │     │                                     │
